@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+
+  <!-- ===== Navigation bar ===== -->
+  <nav class="navbar navbar-expand-lg site-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><i class="bi bi-mortarboard-fill"></i> دليل الفعاليات SVU</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon navbar-dark"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav me-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> الرئيسية</a></li>
+          <li class="nav-item"><a class="nav-link active" href="events.html"><i class="bi bi-calendar3"></i>
+              الفعاليات</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle"></i> عن الدليل</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope"></i> اتصل بنا</a></li>
+        </ul>
+        <button id="dark-mode-toggle" class="btn btn-outline-light ms-3" title="تبديل الوضع المظلم">
+          <i class="bi bi-moon-stars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== Main ===== -->
+  <main class="container py-4">
+
+    <!-- Navigation path -->
+    <nav aria-label="breadcrumb" class="mb-3">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+        <li class="breadcrumb-item"><a href="events.html">الفعاليات</a></li>
+        <li class="breadcrumb-item active"></li>
+      </ol>
+    </nav>
+
+    <div class="row g-4">
+      <!-- Event content -->
+      <div class="col-lg-8">
+
+        <!-- Event hero image -->
+        <div class="event-detail-hero mb-4">
+          <img id="event-image" src="" alt="" />
+          <div class="overlay">
+            <div>
+              <span id="event-badge" class="badge bg-warning text-dark fs-6 mb-2"></span>
+              <h1 id="event-title"></h1>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event details -->
+        <div class="info-box">
+          <h5><i class="bi bi-file-text-fill ms-2"></i> تفاصيل الفعالية</h5>
+          <div id="event-description" class="event-description"></div>
+
+          <!-- Action buttons -->
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <button class="btn btn-primary-custom text-white" id="btn-book">
+              <i class="bi bi-calendar-plus ms-1"></i> احجز مكانك
+            </button>
+            <button class="btn btn-secondary-custom" id="btn-share">
+              <i class="bi bi-share-fill ms-1"></i> شارك الفعالية
+            </button>
+            <a href="events.html" class="btn btn-outline-secondary">
+              <i class="bi bi-arrow-right ms-1"></i> عودة للفعاليات
+            </a>
+          </div>
+        </div>
+
+        <!-- Image gallery -->
+        <div class="info-box">
+          <h5><i class="bi bi-images ms-2"></i> معرض الصور</h5>
+          <div class="row g-2">
+            <div class="col-6 col-md-4">
+              <div class="gallery-thumb">
+                <img src="" class="w-100 rounded" alt="صورة 1" />
+              </div>
+            </div>
+            <div class="col-6 col-md-4">
+              <div class="gallery-thumb">
+                <img src="" class="w-100 rounded" alt="صورة 2" />
+              </div>
+            </div>
+            <div class="col-6 col-md-4">
+              <div class="gallery-thumb">
+                <img src="" class="w-100 rounded" alt="صورة 3" />
+              </div>
+            </div>
+            <div class="col-6 col-md-4">
+              <div class="gallery-thumb">
+                <img src="" class="w-100 rounded" alt="صورة 4" />
+              </div>
+            </div>
+            <div class="col-6 col-md-4">
+              <div class="gallery-thumb">
+                <img src="" class="w-100 rounded" alt="صورة 5" />
+              </div>
+            </div>
+            <div class="col-6 col-md-4">
+              <div class="gallery-thumb">
+                <img src="" class="w-100 rounded" alt="صورة 6" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Event sidebar -->
+      <div class="col-lg-4">
+
+        <!-- Event information -->
+        <div class="info-box">
+          <h5><i class="bi bi-info-circle-fill ms-2"></i> معلومات الفعالية</h5>
+          <ul class="list-unstyled event-info">
+            <li class="mb-2"><i class="bi bi-calendar-event-fill text-primary ms-2"></i><strong> التاريخ:</strong> <span
+                id="event-date"></span></li>
+            <li class="mb-2"><i class="bi bi-clock-fill text-primary ms-2"></i><strong> الوقت:</strong> <span
+                id="event-time"></span></li>
+            <li class="mb-2"><i class="bi bi-geo-alt-fill text-primary ms-2"></i><strong> الموقع:</strong> <span
+                id="event-location"></span></li>
+            <li class="mb-2"><i class="bi bi-tag-fill text-primary ms-2"></i><strong> التصنيف:</strong> <span
+                id="event-category"></span></li>
+            <li class="mb-2"><i class="bi bi-people-fill text-primary ms-2"></i><strong> الطاقة الاستيعابية:</strong>
+              <span id="event-capacity"></span>
+            </li>
+            <li class="mb-2"><i class="bi bi-ticket-fill text-primary ms-2"></i><strong> الدخول:</strong> <span
+                id="event-entry"></span></li>
+          </ul>
+        </div>
+
+        <!-- Event map -->
+        <div class="info-box event-map">
+          <h5><i class="bi bi-map-fill ms-2"></i> الموقع على الخريطة</h5>
+          <img src="/assets/img/map.avif" class="w-100 rounded mb-2" alt="خريطة" />
+          <p class="small text-muted mb-0"><i class="bi bi-geo-alt-fill ms-1"></i> <span id="event-map-caption"></span>
+          </p>
+        </div>
+
+        <!-- Share event -->
+        <div class="info-box">
+          <h5><i class="bi bi-share-fill ms-2"></i> شارك هذه الفعالية</h5>
+          <div class="d-flex gap-2 flex-wrap">
+            <a href="https://www.facebook.com/share/18YCSyGsd8/" class="btn btn-sm btn-share-facebook"><i
+                class="bi bi-facebook ms-1"></i> فيسبوك</a>
+            <a href="https://x.com/svuonline.org" class="btn btn-sm btn-share-twitter"><i
+                class="bi bi-twitter-x ms-1"></i> تويتر</a>
+            <a href="https://wa.me/0934751169" class="btn btn-sm btn-share-whatsapp"><i class="bi bi-whatsapp ms-1"></i>
+              واتساب</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Related events -->
+    <section class="mt-5 related-events">
+      <h4 class="fw-bold mb-4"><i class="bi bi-arrow-repeat ms-2"></i> فعاليات ذات صلة</h4>
+      <div id="related-events-list" class="row g-4"></div>
+    </section>
+
+  </main>
+
+  <!-- Modal -->
+  <div class="modal fade" id="bookingModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold"><i class="bi bi-calendar-check ms-2"></i> حجز مكان في الفعالية</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form id="booking-form">
+            <div class="mb-3">
+              <label class="form-label fw-semibold">الاسم الكامل</label>
+              <input type="text" class="form-control" placeholder="أدخل اسمك الكامل" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold">رقم الطالب</label>
+              <input type="text" class="form-control" placeholder="أدخل رقم الطالب" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold">عدد المقاعد</label>
+              <select class="form-select">
+                <option>1 مقعد</option>
+                <option>2 مقعد</option>
+                <option>3 مقاعد</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary-custom text-white w-100 fw-bold">
+              <i class="bi bi-check-circle ms-1"></i> تأكيد الحجز
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success toast -->
+  <div class="toast-container position-fixed bottom-0 start-0 p-3">
+    <div id="booking-toast" class="toast align-items-center text-bg-success border-0" role="alert">
+      <div class="d-flex">
+        <div class="toast-body fw-bold">
+          <i class="bi bi-check-circle-fill ms-1"></i> تم حجز مكانك بنجاح! 🎉
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5><i class="bi bi-mortarboard-fill ms-1"></i> دليل فعاليات SVU</h5>
+          <div class="footer-social mt-2">
+            <a href="https://www.facebook.com/share/18YCSyGsd8/"><i class="bi bi-facebook"></i></a>
+            <a href="https://x.com/svuonline.org"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.instagram.com/syrian_virtual_university/"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h5>روابط</h5>
+          <a href="index.html">الرئيسية</a>
+          <a href="events.html">الفعاليات</a>
+          <a href="about.html">عن الدليل</a>
+          <a href="contact.html">اتصل بنا</a>
+        </div>
+        <div class="col-md-4">
+          <h5>تواصل</h5>
+          <p>svuonline.org</p>
+        </div>
+      </div>
+      <div class="footer-bottom text-center">&copy; 2026 دليل فعاليات الجامعة الافتراضية</div>
+    </div>
+  </footer>
+
+  <button id="scroll-top" title="العودة للأعلى"><i class="bi bi-arrow-up"></i></button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

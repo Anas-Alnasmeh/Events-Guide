@@ -1,0 +1,768 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;900&display=swap');
+
+/* --- CSS Variables --- */
+:root {
+  --text-primary: #4f2d8a;
+  --primary: #4f2d8a;
+  --secondary: #f0a500;
+  --bg-light: #f8f5ff;
+  --bg-white: #ffffff;
+  --text-dark: #1a1a2e;
+  --const-text-mid: #4a4a6a;
+  --text-mid: #4a4a6a;
+  --card-shadow: 0 4px 24px rgba(79, 45, 138, .13);
+  --radius: 14px;
+  --transition: .3s cubic-bezier(.4, 0, .2, 1);
+}
+
+/* --- Dark Mode --- */
+body.dark-mode {
+  --text-primary: #9063ce;
+  --bg-light: #1a1a2e;
+  --bg-white: #2a2a4e;
+  --text-dark: #ffffff;
+  --text-mid: #b0b0c0;
+  --card-shadow: 0 4px 24px rgba(0, 0, 0, .5);
+  --bs-secondary-color: var(--text-mid);
+}
+
+/* --- amendment Dark Mode --- */
+body.dark-mode .slider-section {
+  background: #0f0f23;
+}
+
+body.dark-mode .team-card {
+  background: #2a2a4e;
+  border: 1px solid #2a2a4e;
+}
+
+body.dark-mode .card-body {
+  background-color: var(--bg-white);
+}
+
+body.dark-mode .btn-twitter {
+  color: rgb(165, 165, 165);
+  border-color: rgb(165, 165, 165);
+}
+
+/* --- Reset & Base --- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  scroll-behavior: smooth;
+  font-family: 'Cairo', 'Tajawal', sans-serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  direction: rtl;
+  text-align: right;
+  min-height: 100vh;
+}
+
+/* --- Navbar --- */
+.site-navbar {
+  background: var(--primary);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, .25);
+  padding: .85rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 2px #8253d3;
+}
+
+.site-navbar .navbar-brand {
+  color: var(--secondary);
+  font-weight: bold;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.site-navbar .nav-link {
+  color: rgba(255, 255, 255, .88);
+  font-weight: 600;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.site-navbar .nav-link:hover,
+.site-navbar .nav-link.active {
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+/* --- Toggle Dark Mode --- */
+#dark-mode-toggle {
+  border-radius: 50px;
+  transition: var(--transition);
+  font-size: 1.1rem;
+}
+
+#dark-mode-toggle:hover {
+  background: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--primary);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  background: linear-gradient(135deg, var(--primary) 0%, #7b3fcf 60%, #9b59b6 100%);
+  padding: 80px 0 60px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 380px;
+  height: 380px;
+  background: rgba(240, 165, 0, .18);
+  border-radius: 50%;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: -60px;
+  width: 260px;
+  height: 260px;
+  background: rgba(255, 255, 255, .08);
+  border-radius: 50%;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-section h1 {
+  font-weight: bold;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.2;
+}
+
+.hero-section p {
+  font-size: 1.1rem;
+  opacity: .9;
+}
+
+/* --- Slider Section --- */
+.slider-section {
+  background: var(--bg-white);
+  padding: 50px 0;
+}
+
+.slider-section h2 {
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.carousel-item img {
+  border-radius: var(--radius);
+  object-fit: cover;
+  height: 380px;
+}
+
+.carousel-caption {
+  background: rgba(79, 45, 138, .78);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  bottom: 30px;
+}
+
+/* --- Category Badges --- */
+.category-section {
+  padding: 40px 0;
+}
+
+.category-section h2 {
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1.2rem;
+}
+
+.cat-btn {
+  border-radius: 30px;
+  font-weight: 700;
+  padding: .55rem 1.4rem;
+  font-size: .95rem;
+  transition: var(--transition);
+  border: 2px solid var(--text-primary);
+  color: var(--text-primary);
+  background: transparent;
+  cursor: pointer;
+}
+
+.cat-btn:hover,
+.cat-btn.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+body.dark-mode .cat-btn.active {
+  border-color: #1a1a2e;
+
+}
+
+/* --- Cards --- */
+.events-section {
+  padding: 50px 0;
+}
+
+.events-section h2 {
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.event-card {
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  overflow: hidden;
+  height: 100%;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(79, 45, 138, .22);
+}
+
+.event-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.event-card .card-title {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 1.05rem;
+}
+
+.event-card .badge-cat {
+  background: var(--secondary);
+  color: var(--primary);
+  font-weight: 700;
+  border-radius: 20px;
+  padding: .4em .8em;
+}
+
+.event-card .card-text {
+  color: var(--text-mid);
+  font-size: .9rem;
+}
+
+.event-meta {
+  font-size: .85rem;
+  color: var(--text-mid);
+}
+
+.event-meta i {
+  color: var(--text-primary);
+}
+
+.btn-primary-custom {
+  background: var(--primary);
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.btn-primary-custom:hover {
+  background: #3a1f6e;
+}
+
+.btn-secondary-custom {
+  background: #ffc107;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.btn-secondary-custom:hover {
+  background: #ffcc31;
+  color: black;
+  transform: translateY(-1px);
+}
+
+/* --- Footer --- */
+.site-footer {
+  background: var(--primary);
+  color: rgba(255, 255, 255, .85);
+  padding: 50px 0 20px;
+  margin-top: 60px;
+}
+
+.site-footer h5 {
+  color: var(--secondary);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.site-footer p {
+  color: rgba(255, 255, 255, .7);
+  font-size: .9rem;
+}
+
+.site-footer a {
+  color: rgba(255, 255, 255, .75);
+  text-decoration: none;
+  transition: var(--transition);
+  display: block;
+  margin-bottom: .4rem;
+}
+
+.site-footer a:hover {
+  color: var(--secondary);
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .12);
+  color: #fff;
+  margin-left: .4rem;
+  transition: var(--transition);
+}
+
+.footer-social a:hover {
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, .15);
+  margin-top: 30px;
+  padding-top: 20px;
+  font-size: .85rem;
+  color: rgba(255, 255, 255, .55);
+}
+
+/* --- Event Page --- */
+.filter-bar {
+  background: var(--bg-white);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 30px;
+}
+
+.filter-bar label {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* --- Event Details --- */
+.event-detail-hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  margin-bottom: 30px;
+}
+
+.event-detail-hero img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+
+.event-detail-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(79, 45, 138, .85) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+}
+
+.event-detail-hero .overlay h1 {
+  color: #fff;
+  font-weight: bold;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.info-box {
+  background: var(--bg-white);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.info-box h5 {
+  color: var(--text-primary);
+  font-weight: 700;
+  border-bottom: 2px solid var(--secondary);
+  padding-bottom: .5rem;
+  margin-bottom: 1rem;
+}
+
+.event-description p {
+  line-height: 1.9;
+  color: var(--text-mid);
+}
+
+/* --- Event Information --- */
+.event-info li {
+  font-size: .95rem;
+  color: var(--text-mid);
+}
+
+/* --- Event Map --- */
+.event-map img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.gallery-thumb {
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.gallery-thumb img {
+  height: 130px;
+  object-fit: cover;
+}
+
+.gallery-thumb:hover {
+  opacity: .85;
+  transform: scale(1.03);
+}
+
+/* --- Share Buttons --- */
+
+.btn-share-facebook,
+.btn-share-twitter,
+.btn-share-whatsapp {
+  color: #fff;
+  border-radius: 8px;
+}
+
+.btn-share-facebook {
+  background: #1877f2;
+}
+
+.btn-share-twitter {
+  background: #000;
+}
+
+.btn-share-whatsapp {
+  background: #25d366;
+}
+
+/* --- Related Events --- */
+.related-events h4 {
+  color: var(--text-primary);
+}
+
+.related-events .card-img-top {
+  height: 160px;
+  object-fit: cover;
+}
+
+.related-events .card-title {
+  color: var(--text-primary);
+}
+
+/* --- About Page --- */
+.about-hero {
+  background: linear-gradient(135deg, var(--primary), #7b3fcf);
+  color: #fff;
+  padding: 70px 0;
+  text-align: center;
+}
+
+.about-hero h1 {
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.about-hero .lead {
+  opacity: .85;
+}
+
+.vision-box .icon {
+  font-size: 3rem;
+  margin-bottom: .8rem;
+}
+
+.vision-box p {
+  color: var(--text-mid);
+  font-size: .93rem;
+  line-height: 1.8;
+}
+
+/* --- Statistics --- */
+#statistics .info-box div:first-child {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+/* --- Team Section --- */
+h3.team-section {
+  color: var(--text-primary);
+}
+
+.team-section .d-flex {
+  gap: 20px;
+}
+
+.all-team-card {
+  justify-content: space-between;
+}
+
+.team-card h6 {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.team-card {
+  width: calc(100% / 5 - 16px);
+  align-items: center;
+  border: none;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  padding: 2rem 1rem;
+}
+
+.team-card img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--secondary);
+  margin-bottom: 1rem;
+}
+
+.team-card small {
+  color: var(--text-mid);
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+/* --- Features List --- */
+ol.features-list,
+ul.features-list {
+  color: var(--text-mid);
+  line-height: 2;
+  padding-right: 1.2rem;
+}
+
+/* --- Contact Page --- */
+.contact-form-box {
+  background: var(--bg-white);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  padding: 36px;
+}
+
+.contact-form-box h3 {
+  color: var(--text-primary);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+ul.contact-info {
+  color: var(--text-mid);
+  line-height: 2.2;
+}
+
+.contact-info i,
+.contact-info a {
+  color: var(--text-primary);
+}
+
+.btn-instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: #fff;
+}
+
+.btn-instagram:hover {
+  color: #eee;
+  background: linear-gradient(45deg, #c77a27, #bb5029, #bd1f36, #ac1c56, #a31376);
+}
+
+a.btn-twitter:hover {
+  color: #eee;
+  background-color: black;
+  border-color: black;
+}
+
+
+/* --- Accordion --- */
+.accordion-button {
+  background: var(--bg-light);
+  color: var(--text-primary);
+}
+
+/* --- Modal --- */
+.modal-content {
+  border-radius: var(--radius);
+  direction: rtl;
+}
+
+.modal-header {
+  background: var(--primary);
+  color: #fff;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.form-control,
+.form-select {
+  border-radius: 10px;
+  border: 1.5px solid #d8d0f0;
+  padding: .65rem 1rem;
+  font-family: 'Cairo', sans-serif;
+  transition: var(--transition);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--text-primary);
+  box-shadow: 0 0 0 3px rgba(79, 45, 138, .15);
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--text-mid);
+}
+
+.breadcrumb-item a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp .6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up:nth-child(1) {
+  animation-delay: .05s;
+}
+
+.fade-in-up:nth-child(2) {
+  animation-delay: .15s;
+}
+
+.fade-in-up:nth-child(3) {
+  animation-delay: .25s;
+}
+
+.fade-in-up:nth-child(4) {
+  animation-delay: .35s;
+}
+
+.fade-in-up:nth-child(5) {
+  animation-delay: .45s;
+}
+
+.fade-in-up:nth-child(6) {
+  animation-delay: .55s;
+}
+
+/* --- Scroll to Top Button --- */
+#scroll-top {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(79, 45, 138, .4);
+  transition: var(--transition);
+  z-index: 999;
+}
+
+#scroll-top:hover {
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+/* --- Responsive Design --- */
+
+@media (max-width: 992px) {
+  .team-card {
+    width: calc(100% / 3 - 8px);
+  }
+
+  .all-team-card {
+    gap: 12px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 50px 0 40px;
+  }
+
+  .carousel-item img {
+    height: 220px;
+  }
+
+  .event-detail-hero img {
+    height: 240px;
+  }
+
+  .cat-btn {
+    font-size: .82rem;
+    padding: .4rem 1rem;
+  }
+
+  .team-card {
+    width: calc(50% - 8px);
+  }
+}
+
+@media (max-width: 576px) {
+  .team-card {
+    width: 100%;
+  }
+}

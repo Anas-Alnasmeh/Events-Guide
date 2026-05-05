@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>دليل فعاليات الجامعة الافتراضية</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+  <!-- Css File -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+
+  <!-- ===== Navigation bar ===== -->
+  <nav class="navbar navbar-expand-lg site-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="bi bi-mortarboard-fill"></i>دليل الفعاليات SVU
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon navbar-dark"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-1">
+          <li class="nav-item"><a class="nav-link active" href="index.html"><i class="bi bi-house-door"></i>
+              الرئيسية</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="events.html"><i class="bi bi-calendar3"></i> الفعاليات</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle"></i> عن الدليل</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope"></i> اتصل بنا</a></li>
+        </ul>
+        <button id="dark-mode-toggle" class="btn btn-outline-light ms-3" title="تبديل الوضع المظلم">
+          <i class="bi bi-moon-stars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== Header ===== -->
+  <section class="hero-section">
+    <div class="container text-center position-relative">
+      <h1 class="fade-in-up">🎓 دليل فعاليات الجامعة الافتراضية</h1>
+      <p class="fade-in-up mt-3 mb-4">اكتشف أحدث فعاليات جامعتك — ثقافة، رياضة، موسيقى وأكثر!</p>
+      <a href="events.html" class="btn btn-warning btn-lg fw-bold px-5 fade-in-up">
+        <i class="bi bi-search ms-1"></i> استعرض الفعاليات
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== Event slider ===== -->
+  <section class="slider-section">
+    <div class="container">
+      <h2><i class="bi bi-star-fill text-warning ms-2"></i> فعاليات بارزة هذا الأسبوع</h2>
+      <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner rounded-3 overflow-hidden shadow">
+
+          <div class="carousel-item active">
+            <img src="/assets/img/festival.avif" class="d-block w-100" alt="مهرجان الفنون" />
+            <div class="carousel-caption">
+              <h5 class="fw-bold">🎨 مهرجان الفنون الجامعي 2026</h5>
+              <p>معرض شامل للفنون البصرية وورش الإبداع</p>
+              <a href="event.html?event=arts-festival" class="btn btn-warning btn-sm fw-bold">عرض التفاصيل</a>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="/assets/img/sports-championship.avif" class="d-block w-100" alt="بطولة رياضية" />
+            <div class="carousel-caption">
+              <h5 class="fw-bold">⚽ البطولة الرياضية الداخلية</h5>
+              <p>منافسات حية بين أبطال الكليات المختلفة</p>
+              <a href="event.html?event=internal-sports-championship" class="btn btn-warning btn-sm fw-bold">عرض
+                التفاصيل</a>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="/assets/img/music-concert.avif" class="d-block w-100" alt="حفل موسيقي" />
+            <div class="carousel-caption">
+              <h5 class="fw-bold">🎵 الحفل الموسيقي الكلاسيكي</h5>
+              <p>أمسية موسيقية راقية في قاعة الاحتفالات الكبرى</p>
+              <a href="event.html?event=classical-music-concert" class="btn btn-warning btn-sm fw-bold">عرض التفاصيل</a>
+            </div>
+          </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Quick sort buttons ===== -->
+  <section class="category-section">
+    <div class="container">
+      <h2><i class="bi bi-tags-fill text-warning ms-2"></i> تصفح حسب التصنيف</h2>
+      <div class="d-flex flex-wrap gap-2">
+        <a href="events.html?cat=all" class="btn cat-btn"><i class="bi bi-grid ms-1"></i> الكل</a>
+        <a href="events.html?cat=culture" class="btn cat-btn"><i class="bi bi-book ms-1"></i> ثقافة</a>
+        <a href="events.html?cat=sport" class="btn cat-btn"><i class="bi bi-trophy ms-1"></i> رياضة</a>
+        <a href="events.html?cat=music" class="btn cat-btn"><i class="bi bi-music-note-beamed ms-1"></i> موسيقى</a>
+        <a href="events.html?cat=family" class="btn cat-btn"><i class="bi bi-people ms-1"></i> عائلي</a>
+        <a href="events.html?cat=science" class="btn cat-btn"><i class="bi bi-lightbulb ms-1"></i> علمي</a>
+        <a href="events.html?cat=tech" class="btn cat-btn"><i class="bi bi-cpu ms-1"></i> تقني</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Latest events ===== -->
+  <section class="events-section">
+    <div class="container">
+      <h2><i class="bi bi-lightning-charge-fill text-warning ms-2"></i> أحدث الفعاليات</h2>
+      <div class="row g-4" id="home-events-grid">
+        <!-- Events will be loaded dynamically from data.json by javaScript -->
+      </div>
+      <div class="text-center mt-4">
+        <a href="events.html" class="btn btn-secondary-custom btn-lg px-5">
+          <i class="bi bi-calendar3 ms-1"></i> عرض جميع الفعاليات
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5><i class="bi bi-mortarboard-fill ms-1"></i> دليل فعاليات SVU</h5>
+          <p>منصتك الشاملة لمتابعة جميع فعاليات الجامعة الافتراضية
+            السورية وأنشطتها الطلابية.</p>
+          <div class="footer-social mt-3">
+            <a href="https://www.facebook.com/share/18YCSyGsd8/" title="فيسبوك"><i class="bi bi-facebook"></i></a>
+            <a href="https://x.com/svuonline.org" title="تويتر"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.instagram.com/syrian_virtual_university/" title="انستغرام"><i
+                class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com/svuonline" title="يوتيوب"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <h5>روابط سريعة</h5>
+          <a href="index.html">الرئيسية</a>
+          <a href="events.html">الفعاليات</a>
+          <a href="about.html">عن الدليل</a>
+          <a href="contact.html">اتصل بنا</a>
+        </div>
+        <div class="col-md-3">
+          <h5>التصنيفات</h5>
+          <a href="events.html?cat=culture">🎨 ثقافة وفنون</a>
+          <a href="events.html?cat=sport">⚽ رياضة</a>
+          <a href="events.html?cat=music">🎵 موسيقى</a>
+          <a href="events.html?cat=family">👨‍👩‍👧 عائلي</a>
+          <a href="events.html?cat=science">🔬 علمي</a>
+        </div>
+        <div class="col-md-3">
+          <h5>تواصل معنا</h5>
+          <p>
+            <i class="bi bi-envelope-fill ms-1"></i> svuonline.org<br>
+            <i class="bi bi-telephone-fill ms-1"></i> 934751169 963+<br>
+            <i class="bi bi-geo-alt-fill ms-1"></i> دمشق — سوريا
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom text-center">
+        &copy; 2026 دليل فعاليات الجامعة الافتراضية — جميع الحقوق محفوظة
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scroll-top" title="العودة للأعلى"><i class="bi bi-arrow-up"></i></button>
+
+  <!-- Bootstrap - JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
