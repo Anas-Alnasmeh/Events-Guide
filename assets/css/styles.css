@@ -75,10 +75,6 @@ body {
   z-index: 1000;
 }
 
-.navbar-toggler:focus {
-  box-shadow: 0 0 0 2px #8253d3;
-}
-
 .site-navbar .navbar-brand {
   color: var(--secondary);
   font-weight: bold;
